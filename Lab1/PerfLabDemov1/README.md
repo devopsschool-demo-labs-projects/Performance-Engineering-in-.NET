@@ -35,6 +35,55 @@ It includes:
    dotnet run
    ```
 
+# For Errorrs
+   ```bash
+Go to:
+C:\Users\rajes\OneDrive\Desktop\TRAINING-PERF\PerfLabDemo\
+
+Then run:
+dotnet restore
+
+
+If You Created a New Solution, Do This:
+
+If you used:
+dotnet new sln -n PerfLab
+dotnet sln add Orders.Api/Orders.Api.csproj
+
+Then run:
+dotnet restore PerfLab.sln
+
+Both commands will restore missing dependencies.
+
+
+Option B – Trigger It Automatically:
+
+Build → Clean Solution
+Build → Rebuild Solution
+
+Visual Studio will restore missing NuGet packages before build.
+
+
+✔️ After Restore, Build the Project:
+dotnet build
+
+
+1. Install the Swagger package
+
+From a terminal in:
+C:\Users\rajes\OneDrive\Desktop\TRAINING-PERF\PerfLabDemo\Orders.Api
+
+run:
+dotnet add package Swashbuckle.AspNetCore
+dotnet restore
+
+This adds the Swashbuckle.AspNetCore package which contains:
+AddSwaggerGen
+UseSwagger
+UseSwaggerUI
+
+   ```
+   
 4. Browse Swagger:
    - https://localhost:5001/swagger
 
