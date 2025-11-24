@@ -83,7 +83,7 @@ UseSwagger
 UseSwaggerUI
 
    ```
-   
+
 4. Browse Swagger:
    - https://localhost:5001/swagger
 
@@ -92,16 +92,26 @@ UseSwaggerUI
 - Naive bulk insert (many SaveChanges):
   ```
   POST https://localhost:5001/api/orders/bulk-naive?count=1000
+  
   ```
 
 - Optimized bulk insert (single SaveChanges):
   ```
   POST https://localhost:5001/api/orders/bulk-optimized?count=1000
+  curl -k -X POST "https://localhost:5001/api/orders/bulk-naive?count=1000"
+
   ```
 
 - Check total orders:
   ```
   GET https://localhost:5001/api/orders/count
+  curl -X POST "http://localhost:5000/api/orders/bulk-optimized?count=1000"
+  curl -X POST "http://localhost:5000/api/orders/bulk-optimized?count=1000"
+
+  ```
+- Get Total Order Count
+  ```
+curl "http://localhost:5000/api/orders/count"
   ```
 
 - Call AService (for circular dependency discussion):
