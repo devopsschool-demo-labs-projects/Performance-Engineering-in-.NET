@@ -92,11 +92,13 @@ UseSwaggerUI
 - Naive bulk insert (many SaveChanges):
   ```
   curl -X POST "http://localhost:5000/api/orders/bulk-naive?count=1000"
+  curl -k -X POST "https://localhost:5000/api/orders/bulk-naive?count=1000"
   ```
 
 - Optimized bulk insert (single SaveChanges):
   ```
   curl -X POST "http://localhost:5000/api/orders/bulk-optimized?count=1000"
+  curl -k -X POST "https://localhost:5001/api/orders/bulk-optimized?count=1000"
 
   ```
 
