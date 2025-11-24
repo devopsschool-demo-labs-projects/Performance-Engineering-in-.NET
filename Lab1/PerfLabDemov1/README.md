@@ -91,22 +91,18 @@ UseSwaggerUI
 
 - Naive bulk insert (many SaveChanges):
   ```
-  POST https://localhost:5001/api/orders/bulk-naive?count=1000
-  
+  curl -X POST "http://localhost:5000/api/orders/bulk-naive?count=1000"
   ```
 
 - Optimized bulk insert (single SaveChanges):
   ```
-  POST https://localhost:5001/api/orders/bulk-optimized?count=1000
-  curl -k -X POST "https://localhost:5000/api/orders/bulk-naive?count=1000"
+  curl -X POST "http://localhost:5000/api/orders/bulk-optimized?count=1000"
 
   ```
 
 - Check total orders:
   ```
-  GET https://localhost:5001/api/orders/count
-  curl -X POST "http://localhost:5000/api/orders/bulk-optimized?count=1000"
-  curl -X POST "http://localhost:5000/api/orders/bulk-optimized?count=1000"
+  curl "http://localhost:5000/api/orders/count"
 
   ```
 - Get Total Order Count
@@ -116,7 +112,7 @@ UseSwaggerUI
 
 - Call AService (for circular dependency discussion):
   ```
-  GET https://localhost:5001/api/orders/ping-a-service
+  GET http://localhost:5001/api/orders/ping-a-service
   ```
 
 ## 4. Circular Dependency Demo
