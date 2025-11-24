@@ -29,6 +29,10 @@ builder.Services.AddScoped<IBService, BService>();
 // Optional: Kestrel + TLS demo config
 builder.WebHost.ConfigureKestrel(options =>
 {
+    // HTTP 5000
+    options.Listen(IPAddress.Loopback, 5000);
+
+    // HTTPS 5001 with TLS 1.2/1.3
     options.Listen(IPAddress.Loopback, 5001, opt =>
     {
         opt.UseHttps(https =>
