@@ -19,6 +19,69 @@ It includes:
 - Docker Desktop (optional, for container demo)
 - kubectl + local cluster (kind/minikube/Docker Desktop) for k8s demo (optional)
 
+# ✅ Prerequisites for Running PerfLab Demo (.NET Performance Engineering Lab)
+
+This project requires a correct setup of the **database** and the **.NET runtimes**.  
+Follow these prerequisites before running `Orders.Api`.
+
+---
+
+# 1️⃣ .NET Runtime Prerequisites
+
+The application targets:
+
+net8.0
+Microsoft.AspNetCore.App 8.x
+Microsoft.NETCore.App 8.x
+
+
+To run the API successfully, your machine **must have .NET 8 runtimes installed**.
+
+## ✔ Required Runtimes (Install These)
+
+Download from the official .NET site:
+
+### 1. .NET Runtime 8.x (x64)
+https://dotnet.microsoft.com/en-us/download/dotnet/8.0/runtime
+
+### 2. ASP.NET Core Runtime 8.x (x64)
+https://dotnet.microsoft.com/en-us/download/dotnet/8.0
+
+Both must be installed.
+
+### ✔ Verify installation
+
+Run:
+
+```bash
+dotnet --list-runtimes
+
+You must install or update .NET to run this application.
+Required: Microsoft.AspNetCore.App 8.0.0
+Found: 10.0.0
+
+The API uses SQL Server LocalDB and expects an empty database named:
+
+PerfLabOrders
+
+
+Your appsettings.json contains:
+
+"DefaultConnection": 
+"Server=(localdb)\\mssqllocaldb;Database=PerfLabOrders;Trusted_Connection=True;MultipleActiveResultSets=true"
+
+✔ Step 1: Ensure LocalDB is Installed
+
+LocalDB is included with:
+
+Visual Studio
+
+SQL Server Express
+
+Check installation:
+
+sqllocaldb info
+
 ## 2. Restore & Run (Local)
 
 1. From the `PerfLabDemo` folder:
